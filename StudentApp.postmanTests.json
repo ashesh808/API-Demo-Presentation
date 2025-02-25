@@ -1,0 +1,63 @@
+{
+    "info": {
+        "_postman_id": "12345-67890-abcdef",
+        "name": "Student API Tests",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Student",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"name\": \"John Doe\", \"major\": \"Computer Science\", \"gpa\": 3.8 }"
+                },
+                "url": { "raw": "{{base_url}}/students", "host": [ "{{base_url}}" ], "path": [ "students" ] }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Students",
+            "request": {
+                "method": "GET",
+                "url": { "raw": "{{base_url}}/students", "host": [ "{{base_url}}" ], "path": [ "students" ] }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Student By ID",
+            "request": {
+                "method": "GET",
+                "url": { "raw": "{{base_url}}/students/{{student_id}}", "host": [ "{{base_url}}" ], "path": [ "students", "{{student_id}}" ] }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Student",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"name\": \"Jane Doe\", \"major\": \"Data Science\", \"gpa\": 3.9 }"
+                },
+                "url": { "raw": "{{base_url}}/students/{{student_id}}", "host": [ "{{base_url}}" ], "path": [ "students", "{{student_id}}" ] }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Student",
+            "request": {
+                "method": "DELETE",
+                "url": { "raw": "{{base_url}}/students/{{student_id}}", "host": [ "{{base_url}}" ], "path": [ "students", "{{student_id}}" ] }
+            },
+            "response": []
+        }
+    ]
+}
